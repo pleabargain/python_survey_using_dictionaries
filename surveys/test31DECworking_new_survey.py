@@ -132,12 +132,8 @@ comment_negatively = [
                 "Have you considered...",
 ]
 
-counter_arg = [
-                "you're wrong!",
-                "I'm right!",
-                ]
 
-express_disagereement = [
+express_disagreement = [
                         "I don't think so.",
                         "I don't believe it .",
                         "I'm afraid I can't agree with you.",
@@ -192,10 +188,15 @@ camera_off = [
 #dictionary
 #don't forget the commas!
 display_options = {
-                    "camera_off": camera_off,
-                    "point_of_view":point_of_views,
-                    "arguments_to_support_POV":arguments_to_support_POV,
-                    "counter_arg":counter_arg,
+                    "Arguments to support your POV":arguments_to_support_POV,
+                    "Let's turn the camera off": camera_off,
+                    "comment negatively":comment_negatively,
+                    "complain":complain,
+                    "express disagreement":express_disagreement,
+                    "expressing agreement":expressing_agreement,
+                    "point of view":point_of_views,
+                    "polite interruption":polite_interruption,
+                    #"counter_arg":counter_arg,
                     }
 
 
@@ -275,7 +276,7 @@ def main():
         # answers.append(answer)
         with open(f"{name}.output.csv","a") as f:
             f.write(f"'{question}', '{display_option}', '{second_option}', '{student_answer}'\n")
-        command = input("q for quit or enter to continue s for skip to next     question")
+        command = input("q for quit\nenter to continue\ns to skip to the next random question")
         if command == 'q' or command == 'quit' or command == 'exit':
             break
         if command == 's' or command=='skip':
